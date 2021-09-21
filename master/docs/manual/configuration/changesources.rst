@@ -956,11 +956,12 @@ It accepts the following arguments:
     The host key must be in the form of `<key type> <base64-encoded string>`,
     e.g. `ssh-rsa AAAAB3N<...>FAaQ==`.
 
+``io_timeout`` (optional)
+   How long to wait before terminating the git subprocess for inactivity.
+   Default value is 300 seconds, set it to higher if you are having trouble
+   starting a Buildbot master with a huge git repository.
+
 ``sshKnownHosts`` (optional)
-   Specifies the contents of the SSH known_hosts file to match when authenticating with SSH public key authentication.
-   This may be either a :ref:`Secret` or just a string.
-   `sshPrivateKey` must be specified in order to use this option.
-   `sshHostKey` must not be specified in order to use this option.
 
 A configuration for the Git poller might look like this:
 
